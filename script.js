@@ -4,6 +4,7 @@ const tempElement = document.querySelector(".temperature-value p");
 const descElement = document.querySelector(".temperature-description p");
 const locationElement = document.querySelector(".location p");
 const notificationElement = document.querySelector(".notification");
+const humidityElement = document.querySelector(".humidity p");
 
 // App data
 const weather = {};
@@ -53,6 +54,7 @@ function getWeather(latitude, longitude){
             weather.iconId = data.weather[0].icon;
             weather.city = data.name;
             weather.country = data.sys.country;
+            weather.humidity = data.main.humidity;
         })
         .then(function(){
             displayWeather();
@@ -66,6 +68,7 @@ function displayWeather(){
     tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
     descElement.innerHTML = weather.description;
     locationElement.innerHTML = `${weather.city}, ${weather.country}`;
+    humidityElement.innerHTML = `${weather.humidity}%`
 }
     
     
