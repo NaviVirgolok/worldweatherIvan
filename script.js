@@ -71,7 +71,7 @@ function displayWeather(){
     tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
     descElement.innerHTML = weather.description;
     locationElement.innerHTML = `${weather.city}, ${weather.country}`;
-    humidityElement.innerHTML = `<span>Humidity:</span>${weather.humidity.value}<span>%</span>`;
+    humidityElement.innerHTML = `<span>Humidity:</span>${weather.humidity.value}<span>% - Humidity</span>`;
 }
     
     
